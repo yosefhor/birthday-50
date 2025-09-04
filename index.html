@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מזל טוב – חוגגים 50!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Assistant', system-ui, -apple-system, sans-serif; overflow-x: hidden; background: linear-gradient(to bottom right, #fef3c7, #fef9c3, #fef3c7); }
+    .bounce { animation: bounce 2s infinite; }
+    .pulse { animation: pulse 2s infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
+
+  <!-- Header -->
+  <h1 class="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-600 via-yellow-500 to-orange-500 mb-4">מזל טוב – חוגגים 50!</h1>
+  <p class="text-lg md:text-xl text-gray-600 mb-8">הזמנה מיוחדת לחגיגה בלתי נשכחת</p>
+
+  <!-- Image -->
+  <div class="relative w-full max-w-md h-64 rounded-2xl overflow-hidden shadow-lg mb-8">
+    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=250&fit=crop&crop=center" alt="Birthday celebration" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-amber-900/20 to-transparent"></div>
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+      <span class="text-amber-800 font-semibold text-sm">🎂 50 שנים מדהימות!</span>
+    </div>
+  </div>
+
+  <!-- Invitation Text -->
+  <p class="text-lg md:text-xl text-gray-700 mb-10">נשמח לראותכם בחגיגה גדולה לכבוד יום הולדת 50.</p>
+
+  <!-- Event Details -->
+  <div class="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl p-6 shadow-inner border border-amber-200/50 mb-10 text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-amber-800 mb-6">⭐ פרטי האירוע ⭐</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div>
+        <p class="text-sm font-semibold text-amber-800 mb-1">תאריך:</p>
+        <p class="text-lg font-bold text-gray-800">יום חמישי, 1 בינואר 2026</p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-amber-800 mb-1">שעה:</p>
+        <p class="text-lg font-bold text-gray-800">20:00</p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-amber-800 mb-1">מיקום:</p>
+        <p class="text-lg font-bold text-gray-800">אולם אירועים "שם האולם"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+    <a href="https://maps.google.com/maps?q=אולם אירועים שם האולם" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg flex items-center justify-center gap-2 transition transform hover:scale-105">Google Maps</a>
+    <a href="https://waze.com/ul?q=אולם אירועים שם האולם" target="_blank" class="bg-cyan-500 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg flex items-center justify-center gap-2 transition transform hover:scale-105">🚗 Waze</a>
+  </div>
+
+  <!-- Footer -->
+  <p class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-500 mb-4">מצפים לראותכם!</p>
+  <div class="flex gap-2 justify-center text-2xl">
+    <span class="pulse">💖</span>
+    <span class="pulse" style="animation-delay:0.3s">✨</span>
+    <span class="pulse" style="animation-delay:0.6s">🌟</span>
+  </div>
+
+</body>
+</html>
