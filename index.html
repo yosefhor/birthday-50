@@ -109,35 +109,36 @@
       class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg flex items-center justify-center gap-2 transition transform hover:scale-105">
       <img src="256px-Maps.png" alt="Waze" width="30" height="30">
       Google Maps</a>
-    <a href="https://waze.com/ul?ll=32.085299,34.833868&navigate=yes" target="_blank" class="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg flex items-center justify-center gap-2 transition transform hover:scale-105>
-      <img src="waze.png" alt="Waze" width="30" height="30">
+    <a href="https://waze.com/ul?ll=32.085299,34.833868&navigate=yes" target="_blank"
+      class="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg flex items-center justify-center gap-2 transition transform hover:scale-105">
+      <img src=" waze.png" alt="Waze" width="30" height="30">
       Waze</a>
   </div>
 
 
   <!-- Footer -->
   <p class=" text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-500 mb-4">מצפים
-      לראותכם!</p>
-      <div class="flex gap-2 justify-center text-2xl">
-        <span class="pulse">💖</span>
-        <span class="pulse" style="animation-delay:0.3s">✨</span>
-        <span class="pulse" style="animation-delay:0.6s">🌟</span>
-      </div>
+    לראותכם!</p>
+  <div class="flex gap-2 justify-center text-2xl">
+    <span class="pulse">💖</span>
+    <span class="pulse" style="animation-delay:0.3s">✨</span>
+    <span class="pulse" style="animation-delay:0.6s">🌟</span>
+  </div>
 
 
-      <script>
-        document.getElementById('addToCalendar').addEventListener('click', function () {
-          // Create calendar event data
-          const eventTitle = encodeURIComponent('יום הולדת 50 - חגיגה מיוחדת');
-          const eventLocation = encodeURIComponent('מרכז אחים, רחוב רבי עקיבא 86 קומה 9, בני ברק');
-          const eventDescription = encodeURIComponent('חגיגת יום הולדת 50 - נשמח לראותכם!');
+  <script>
+    document.getElementById('addToCalendar').addEventListener('click', function () {
+      // Create calendar event data
+      const eventTitle = encodeURIComponent('יום הולדת 50 - חגיגה מיוחדת');
+      const eventLocation = encodeURIComponent('מרכז אחים, רחוב רבי עקיבא 86 קומה 9, בני ברק');
+      const eventDescription = encodeURIComponent('חגיגת יום הולדת 50 - נשמח לראותכם!');
 
-          // Event date: October 9, 2025 at 18:00 (6:00 PM)
-          const startDate = '20251009T180000';
-          const endDate = '20251009T220000'; // 4 hours duration
+      // Event date: October 9, 2025 at 18:00 (6:00 PM)
+      const startDate = '20251009T180000';
+      const endDate = '20251009T220000'; // 4 hours duration
 
-          // Create ICS format for universal calendar support
-          const icsContent = `BEGIN:VCALENDAR
+      // Create ICS format for universal calendar support
+      const icsContent = `BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Birthday Celebration//Event//EN
 BEGIN:VEVENT
@@ -152,36 +153,36 @@ STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR`;
 
-          // Try different calendar methods based on device/browser
+      // Try different calendar methods based on device/browser
 
-          // Method 1: Try native calendar (mobile devices)
-          if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) {
-            // For mobile devices, try to open native calendar
-            const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${eventTitle}&dates=${startDate}/${endDate}&details=${eventDescription}&location=${eventLocation}`;
+      // Method 1: Try native calendar (mobile devices)
+      if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) {
+        // For mobile devices, try to open native calendar
+        const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${eventTitle}&dates=${startDate}/${endDate}&details=${eventDescription}&location=${eventLocation}`;
+        window.open(googleCalendarUrl, '_blank');
+      } else {
+        // Method 2: Download ICS file for desktop
+        const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = 'birthday-celebration.ics';
+
+        // Trigger download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        // Also provide backup Google Calendar link
+        setTimeout(() => {
+          const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${eventTitle}&dates=${startDate}/${endDate}&details=${eventDescription}&location=${eventLocation}`;
+
+          if (confirm('האם תרצה לפתוח גם בגוגל קלנדר?')) {
             window.open(googleCalendarUrl, '_blank');
-          } else {
-            // Method 2: Download ICS file for desktop
-            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.download = 'birthday-celebration.ics';
-
-            // Trigger download
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            // Also provide backup Google Calendar link
-            setTimeout(() => {
-              const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${eventTitle}&dates=${startDate}/${endDate}&details=${eventDescription}&location=${eventLocation}`;
-
-              if (confirm('האם תרצה לפתוח גם בגוגל קלנדר?')) {
-                window.open(googleCalendarUrl, '_blank');
-              }
-            }, 500);
           }
-        });
-      </script>
+        }, 500);
+      }
+    });
+  </script>
 
 
 </body>
