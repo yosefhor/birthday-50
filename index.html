@@ -78,17 +78,17 @@
     <div class="grid md:grid-cols-3 gap-6">
       <div>
         <p class="text-sm font-semibold text-amber-800 mb-1">תאריך:</p>
-        <p class="text-lg font-bold text-gray-800">יום חמישי, יז תשרי<br>ב דחול המועד סוכות</p>
-        <p class="text-gray-600">9 באוקטובר 2025 למניינם</p>
+        <p class="text-lg font-bold text-gray-800">יום רביעי, כג תשרי<br>אסרו-חג סוכות</p>
+        <p class="text-gray-600">15 באוקטובר 2025 למניינם</p>
       </div>
       <div>
         <p class="text-sm font-semibold text-amber-800 mb-1">שעה:</p>
-        <p class="text-lg font-bold text-gray-800">18:00</p>
+        <p class="text-lg font-bold text-gray-800">20:00</p>
       </div>
       <div>
         <p class="text-sm font-semibold text-amber-800 mb-1">מיקום:</p>
-        <p class="text-lg font-bold text-gray-800">מרכז אחים</p>
-        <p class="text-sm text-gray-600">רחוב רבי עקיבא 86 קומה 9<br>בני ברק</p>
+        <p class="text-lg font-bold text-gray-800">שירת מלכות</p>
+        <p class="text-sm text-gray-600">רחוב שלמה המלך 18<br>בני ברק</p>
       </div>
     </div>
   </div>
@@ -139,12 +139,12 @@
     document.getElementById('addToCalendar').addEventListener('click', function () {
       // Create calendar event data
       const eventTitle = encodeURIComponent('יום הולדת 50 - חגיגה מיוחדת');
-      const eventLocation = encodeURIComponent('מרכז אחים, רחוב רבי עקיבא 86 קומה 9, בני ברק');
+      const eventLocation = encodeURIComponent('שירת מלכות, רחוב שלמה המלך 18, בני ברק');
       const eventDescription = encodeURIComponent('חגיגת יום הולדת 50 - נשמח לראותכם!');
 
-      // Event date: October 9, 2025 at 18:00 (6:00 PM)
-      const startDate = '20251009T180000';
-      const endDate = '20251009T220000'; // 4 hours duration
+      // Event date: October 15, 2025 at 20:00 (8:00 PM)
+      const startDate = '20251015T200000';
+      const endDate = '20251015T230000'; // 3 hours duration
 
       // Create ICS format for universal calendar support
       const icsContent = `BEGIN:VCALENDAR
